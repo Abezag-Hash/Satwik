@@ -265,8 +265,13 @@ var mapStyle = [
   },
 ];
 
+
+const width_proportion = '80%';
+const height_proportion = '40%';
+
 function MapScreen() {
   return (
+    <View>
     <View style={styles.container}>
       <MapView
         customMapStyle={mapStyle}
@@ -276,7 +281,7 @@ function MapScreen() {
           height: "100%",
         }}
       />
-      <View style = {{position:"absolute"}}>
+      {/* <View style = {{position:"absolute"}}>
         <View style = {{flex : 2}}>
         <View style={styles.buttonContainer} >
               <Text style={styles.buttontext}>Add Pickup Point</Text>
@@ -287,7 +292,24 @@ function MapScreen() {
               <Text style={styles.buttontext}>Add Pickup Point</Text>
           </View>
         </View>
+        
+      </View> */}
+      {/* <View style={styles.container1}>
+       
+
+       <View style={styles.RectangleShapeView} />
+
+     </View> */}
+     </View>
+     <View style={styles.screen}>
+        <View style={styles.box}>
+          <Text style={styles.text}>
+            {width_proportion} of width{'\n'}
+            {height_proportion} of height
+          </Text>
+        </View>
       </View>
+    
     </View>
   );
 }
@@ -313,6 +335,40 @@ const styles = StyleSheet.create({
     color: "white",
     justifyContent: "center",
     alignItems:"center"
+  },
+  container1: {
+ 
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: '#F5FCFF',
+    position:"absolute",
+  },
+ 
+  RectangleShapeView: {
+  flex:0.8,
+  // marginTop: 20,
+  width: '80%',
+  height: 120,
+  backgroundColor: '#FFC107'
+ 
+  },
+  screen: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#5A9BD4',
+    position:"absolute",
+  },
+  box: {
+    width: width_proportion,
+    height: height_proportion,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#B8D2EC',
+  },
+  text: {
+    fontSize: 18,
   },
 });
 
